@@ -149,7 +149,7 @@ collate = Collater(pad_value=0, pad_to_multiple=1)
 
 
 AUDIO_SAMPLE_RATE = 16000
-MAX_INPUT_AUDIO_LENGTH = 100  # in seconds
+MAX_INPUT_AUDIO_LENGTH = 30  # in seconds
 
 
 def remove_prosody_tokens_from_text(text):
