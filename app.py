@@ -149,7 +149,7 @@ collate = Collater(pad_value=0, pad_to_multiple=1)
 
 
 AUDIO_SAMPLE_RATE = 16000
-MAX_INPUT_AUDIO_LENGTH = 10  # in seconds
+MAX_INPUT_AUDIO_LENGTH = 100  # in seconds
 
 
 def remove_prosody_tokens_from_text(text):
@@ -231,13 +231,15 @@ TARGET_LANGUAGE_NAMES = [
     "French",
     "German",
     "Spanish",
+    "Portuguese",
 ]
 
 UPDATED_LANGUAGE_LIST = {
-    "English": ["French", "German", "Spanish"],
-    "French": ["English", "German", "Spanish"],
-    "German": ["English", "French", "Spanish"],
-    "Spanish": ["English", "French", "German"],
+    "English": ["French", "German", "Spanish", "Portuguese"],
+    "French": ["English", "German", "Spanish", "Portuguese"],
+    "German": ["English", "French", "Spanish", "Portuguese"],
+    "Spanish": ["English", "French", "German", "Portuguese"],
+    "Portuguese": ["English", "French", "German", "Spanish"],
 }
 
 def rs_change(rs):
@@ -265,7 +267,7 @@ with gr.Blocks(css="style.css") as demo:
                 target_language = gr.Dropdown(
                     label="Target language",
                     choices=TARGET_LANGUAGE_NAMES,
-                    value="French",
+                    value="Portuguese",
                     interactive=True,
                 )
                 source_language.change(
